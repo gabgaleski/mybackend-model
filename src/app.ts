@@ -1,4 +1,5 @@
 import express from 'express';
+import routes from './routes';
 
 class App {
   public app: express.Express;
@@ -6,6 +7,11 @@ class App {
   constructor() {
     this.app = express();
     this.config();
+    this.routes();
+  }
+
+  private routes(): void {
+    this.app.use(routes);
   }
 
   private config(): void {
