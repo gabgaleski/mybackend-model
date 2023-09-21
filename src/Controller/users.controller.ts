@@ -7,7 +7,7 @@ export default class UserController {
         private usersService = new UserService(),
     ) {}
 
-    async findAll(req: Request, res: Response) {
+    async findAll(req: Request, res: Response): Promise<Response> {
         const result = await this.usersService.findAll();
         return res.status(result.status).json(result.data);
     }
