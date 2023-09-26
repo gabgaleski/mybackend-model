@@ -13,11 +13,33 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const userModel_1 = __importDefault(require("../database/models/userModel"));
+const passwordBcript_1 = __importDefault(require("../auth/passwordBcript"));
 class UserService {
     findAll() {
         return __awaiter(this, void 0, void 0, function* () {
             const users = yield userModel_1.default.findAll();
             return { status: 200, data: users };
+        });
+    }
+    create(user) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { username, email, password } = user;
+            const hash = (0, passwordBcript_1.default)(password);
+            const infos = { username, email, password: hash };
+            const newUser = yield userModel_1.default.create(infos);
+            return { status: 201, data: newUser };
+        });
+    }
+    findById(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const user = yield userModel_1.default.findByPk(id);
+            return { status: 200, data: user };
+        });
+    }
+    delete(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const deletedUser = yield userModel_1.default.destroy({ where: { id } });
+            return { status: 204, data: deletedUser };
         });
     }
 }

@@ -24,6 +24,29 @@ class UserController {
             return res.status(result.status).json(result.data);
         });
     }
+    create(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const result = yield this.usersService.create(req.body);
+            return res.status(result.status).json({ message: "User created successfully" });
+        });
+    }
+    findById(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const result = yield this.usersService.findById(id);
+            if (result.data === null) {
+                return res.status(404).json({ message: "User not found" });
+            }
+            return res.status(result.status).json(result.data);
+        });
+    }
+    delete(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const result = yield this.usersService.delete(id);
+            return res.status(result.status).json({});
+        });
+    }
 }
 exports.default = UserController;
 //# sourceMappingURL=users.controller.js.map
