@@ -8,8 +8,8 @@
 
 </div>
 
-# :notebook_with_decorative_cover: 
-Construção de backend modelo, utilizando arquitetura de camadas CMS, o paradigma da Programação Orientada a objetos e criando uma API Restfull.
+# :notebook_with_decorative_cover: Purpose
+Building a model backend, using CMS layered architecture, the Object-Oriented Programming paradigm and creating a Restfull API.
 
 
 ## :star2: About the Project
