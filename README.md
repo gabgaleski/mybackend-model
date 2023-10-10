@@ -38,3 +38,11 @@ To run this project, you will need to add the following environment variables to
 `DB_PASS`
 
 `DB_PORT`
+
+### Init
+
+- `docker-compose up -d`
+- `npx sequelize db:migrate`
+- `npx sequelize db:seed:all`
+- `npm run build`
+- `npm start`
