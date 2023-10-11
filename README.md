@@ -33,7 +33,6 @@ Building a model backend, using CMS layered architecture, the Object-Oriented Pr
 ### :key: Environment Variables
 O projeto ja esta com as variaveis de ambiente exemplificada, porem o que sera preciso para rodar o projeto é um arquivo .env com as seguinter informaçoes
 
-
 `APP_PORT`
 
 `JWT_SECRET`
@@ -49,6 +48,5 @@ O projeto ja esta com as variaveis de ambiente exemplificada, porem o que sera p
 ### Init
 
 - `docker-compose up -d --build`
+- `npm run db:reset`
 - `docker exec -it backend bash`
-- `npx sequelize db:migrate`
-- `npx sequelize db:seed:all`
