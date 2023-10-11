@@ -2,11 +2,12 @@
   "name": "mybackend",
   "version": "1.0.0",
   "description": "Back end API",
-  "main": "./build/server",
+  "main": "./src/server.js",
   "scripts": {
-    "start": "node ./build/server.js",
-    "dev": "tsnd --watch \"./src/**\" --transpile-only ./src/server.ts",
-    "build": "tsc --project tsconfig.json"
+    "start": "ts-node src/server.ts",
+    "dev": "nodemon --watch \"./src/**\" --ext \"ts,js\" --ignore \"src/**/*.spec.ts,src/**/*.json\" --exec \"ts-node src/server.ts\"",
+    "build": "npx -y tsc",
+    "db:reset": "npx -y tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
   "author": "",
   "license": "ISC",
