@@ -8,17 +8,15 @@
 
 </div>
 
-# :notebook_with_decorative_cover: Purpose
-Building a model backend, using CMS layered architecture, the Object-Oriented Programming paradigm and creating a Restfull API.
+# :notebook_with_decorative_cover: Objetivo
+O objetivo é criar um modelo de API Restfull em um backend que segue uma arquitetura e modelo expansivos para serem implementados.
 
 
-## :star2: About the Project
-<details> <summary>Database</summary> <ul>
-<li><a href="">MySQL</a></li>
-</ul> </details>
-<details> <summary>DevOps</summary> <ul>
-<li><a href="">Docker Compose</a></li>
-</ul> </details>
+## :star2: Sobre o Projeto
+Um modelo de API Restfull com um backend configurado no sequelize para o banco de dados MySQL, utilizando Typescript com POO seguindo o SOLID.
+O Backend conta um endpoint para /users com todo o CRUD e criptografia na senha para exemplificar, e um para login com retorno de JWT.
+
+O backend e o banco de dados estao configurados tambem em um docker compose, facilitando o desenvolvimento e permitindo a criação de um frontend no mesmo arquivo
 
 ### :dart: Features
 - Node.js
@@ -31,7 +29,7 @@ Building a model backend, using CMS layered architecture, the Object-Oriented Pr
 
 
 ### :key: Environment Variables
-O projeto ja esta com as variaveis de ambiente exemplificada, porem o que sera preciso para rodar o projeto é um arquivo .env com as seguinter informaçoes
+O projeto ja esta com as variaveis de ambiente exemplificada, porem o que sera preciso para rodar o projeto é um arquivo .env com as seguintes chaves
 
 `APP_PORT`
 
@@ -46,7 +44,10 @@ O projeto ja esta com as variaveis de ambiente exemplificada, porem o que sera p
 `DB_PORT`
 
 ### Init
+Para iniciar o projeto basta copiar e colar os codigos no terminal logo apos rodar o `npm install`. È importante seguir a ordem dos comandos para 
+rodar tudo corretamente
 
 - `docker-compose up -d --build`
 - `npm run db:reset`
-- `docker exec -it backend bash`
+
+Pode rodar o comando `docker exec -it backend bash` para entrar no terminal do container `backend`
